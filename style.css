@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 75vh;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    /* o que sair da dessa div some */
+    background: linear-gradient(#5ca3e6, #87ceeb, #e0f6ff);
+    border-bottom: 15px solid rgb(21, 105, 63);
+}
+
+.clouds {
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 15s infinite linear;
+}
+
+@keyframes clouds-animation {
+
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+
+}
+
+.mario {
+    width: 150px;
+    position: absolute;
+    bottom: 0px;
+}
+
+.jump {
+    animation: jump 750ms ease-out;
+}
+
+@keyframes jump {
+
+    0% {
+        bottom: 0;
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+
+    60% {
+        bottom: 150px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+
+    /*a porcentagem define em quanto porcento da animação esta ação irá ocorrer */
+}
+
+.pipe {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    animation: pipe-animation 2s infinite linear;
+    /* cria uma animação com os dados abaixo, duração inifinita e linear*/
+}
+
+@keyframes pipe-animation {
+    from {
+        right: -80px;
+        /* faz com que a animação comece com ele fora da tela */
+    }
+
+    to {
+        right: 100%;
+        /* faz com que ele saia da tela ao final da animação*/
+    }
+}
+
+.chao{
+    background-image: url(./img/chao.jpg);
+    background-repeat: repeat;
+
+    width: 100%;
+    height: 5vh;
+}
